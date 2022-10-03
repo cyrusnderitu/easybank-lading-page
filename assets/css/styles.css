@@ -100,13 +100,22 @@ button{
     justify-content: center;
     align-items: center;
 }
-
+.menu_open{
+    display: none;
+}
 /*NAV SECTION*/
 .nav_cont{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    column-gap: 18rem;
     align-items: center;
     height: 3.5rem;
+}
+.nav_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 .nav_list{
     display: flex;
@@ -118,9 +127,6 @@ button{
 }
 
 /**** ---- HERO SECTION ---- ****/
-.hero{
-    overflow: hidden;
-}
 .hero_cont{
     display: flex;
 }
@@ -139,9 +145,9 @@ button{
 }
 .hero_display{
     background-image: url("../images/bg-intro-desktop.svg");
-    background-position: -40% 80%;   
+    background-position: 10% 60%;   
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 150%;
     width: calc(100% + 8rem);
     margin-right: -8rem;
 }
@@ -149,7 +155,7 @@ button{
     position: absolute;
     width: 43%;
     top: -2.5rem;
-    right: -3rem;
+    right: 0;
 }
 
 /*** --- ABOUT CONT --- ***/
@@ -261,9 +267,17 @@ button{
     flex-direction: column;
     align-items: flex-end;
 }
+@media screen and (max-width: 1300px) {
+    .nav_cont{
+        column-gap: 15rem;
+    }
+}
 @media screen and (max-width: 1220px) {
     h1{
         width: 100%;
+    }
+    .nav_cont{
+        column-gap: 10rem;
     }
     .container{
         margin-left: 6rem;
@@ -311,6 +325,9 @@ button{
         margin-left: 4rem;
         margin-right: 4rem;
     }
+    .nav_cont{
+        column-gap: 8rem;
+    }
     .hero_display{
         width: calc(100% + 4rem);
         margin-right: -4rem;
@@ -356,6 +373,9 @@ button{
     .nav_list{
         font-size: 14px;
     }
+    .nav_cont{
+        column-gap: 6rem;
+    }
     .about_top{
         display: flex;
         flex-direction: column;
@@ -369,6 +389,9 @@ button{
         align-items: center;
         justify-content: center;
         text-align: center;
+    }
+    .about_card p{
+        font-size: 12px;
     }
     .blog_cont{
         width: 100%;
@@ -388,5 +411,159 @@ button{
     }
     .footer_right .footer_copy{
         font-size: 12px;
+    }
+}
+@media screen and (max-width: 590px) {
+    .container{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    .blog_bottom{
+        display: grid;
+        grid-template-columns: repeat(2, 200px);
+    }
+    .footer_left .socials{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: .25rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .container{
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    h2{
+        font-size: 2rem;
+        text-align: center;
+        width: 75%;
+        margin: auto;
+    }
+    button{
+        padding: .75rem 1.5rem;
+        border-radius: 1.75rem;
+        border: none;
+        font-family: var(--main-ff);
+        font-size: .836rem;
+    }
+    .menu_open{
+        display: block;
+    }
+    .nav_cont{
+        justify-content: space-between;
+        column-gap: 0;
+    }
+    .nav_menu{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 3.5rem;
+        background-color: burlywood;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    .nav_list{
+        display: flex;
+        position: absolute;
+        top: 4rem;
+        padding: 2rem;
+        border-radius: .5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1.5rem;
+        background-color: antiquewhite;
+        width: 85%;
+    }
+    .nav_btn{
+        position: absolute;
+        bottom: 7rem;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        width: fit-content;
+    }
+    /**** ---- HERO SECTION ---- ****/
+    .hero_cont{
+        display: flex;
+        flex-direction: column;
+    }
+    .hero_display,
+    .hero_content{
+        flex: 1;
+    }
+    .hero_content{
+        margin-top: 20rem;
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .hero_content p{
+        width: 100%;
+        color: var(--Grayish-Blue);
+        line-height: 1.5;
+    }
+    .hero_display{
+        background-image: url("../images/bg-intro-mobile.svg");
+        background-position: top ;   
+        background-repeat: no-repeat;
+        background-size: 150%;
+        /* width: calc(100% + 4rem);
+        margin-right: -4rem;
+        margin-left: -4rem; */
+    }
+    .hero_img{
+        position: absolute;
+        width: 75%;
+        top: -2.5rem;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+    .about_bottom{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .about_top p {
+        width: 100%;
+        margin: 1rem 0 1.75rem;
+    }
+    .about_bottom p{
+        font-size: 14px;
+        line-height: 1.5;
+        width: 100%;
+    }
+    .blog_bottom{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        justify-content: center;
+    }
+    .footer_cont{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+    .footer_center{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1rem;
+        text-align: center;
+    }
+    .footer_right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+        margin-top: 1.5rem;
     }
 }
