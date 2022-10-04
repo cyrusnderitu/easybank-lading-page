@@ -103,6 +103,9 @@ button{
 .menu_open{
     display: none;
 }
+.menu_close{
+    display: none;
+}
 /*NAV SECTION*/
 .nav_cont{
     display: flex;
@@ -449,6 +452,10 @@ button{
     .menu_open{
         display: block;
     }
+    .menu_close{
+        position: absolute;
+        right: 3.25rem;
+    }
     .nav_cont{
         justify-content: space-between;
         column-gap: 0;
@@ -482,7 +489,7 @@ button{
     }
     .nav_btn{
         position: absolute;
-        bottom: 7rem;
+        top: 30rem;
         right: 0;
         left: 0;
         margin: 0 auto;
